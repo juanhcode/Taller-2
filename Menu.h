@@ -26,9 +26,8 @@ Colaboracion: Contacto.h
               
 */
 
-#include <iostream>
-#include <string>
-#include <stdlib.h>
+
+#include "Libreta.h" 
 
 using namespace std;
 
@@ -41,7 +40,11 @@ class Menu
 		Menu();
 		virtual ~Menu();
 		void seleccionarOpcion();
-          void visualizar();	
+          void visualizar();
+          void guardarContactos();
+          void seleccionarInformacionContacto();
+          void seleccionarInformacionModificar();
+          void modificarInformacion();	
 
 	private:
           int opcion;
