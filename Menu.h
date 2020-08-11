@@ -18,7 +18,9 @@ E-mail:				: juan.manuel.hoyos@correounivalle.edu.co
 
 /*CRC
 Clase: Menu.h
-Responsabilidad: seleccionar las opciones
+Responsabilidad: seleccionar las opciones,  agregar un nuevo contacto, eliminar un contacto ya existente,
+ver la información detallada de un contacto, modificar la información del contacto, mostrar
+la lista completa de contactos y buscar contactos por las palabras claves.
 Colaboracion: Contacto.h
               Libreta.h
               
@@ -39,13 +41,10 @@ class Menu
 		Menu();
 		virtual ~Menu();
 		void seleccionarOpcion();
-		
-		
-		
-	protected:
-		//Lo utilizaremos cuando trabajemos con herencia.
-		
+          void visualizar();	
+
 	private:
+          int opcion;
 		
 };
 
