@@ -11,7 +11,7 @@ class Libreta
 
 
     public:
-    Libreta(){};
+    Libreta();
     ~Libreta();
     void agregarContacto(Contacto nuevoContacto);
     void eliminarContacto(std::string nombre, std::string apellido);

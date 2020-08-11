@@ -15,6 +15,7 @@ Contacto::~Contacto(){
 
 }
 
+
 string Contacto::darNombre(){
     return nombre;
 }
@@ -32,19 +33,19 @@ string Contacto::darCorreoElectronico(){
 }
 
 void Contacto::modificarNombre(string nombre){
-    
+    nombre = nombre;
 }
 
 void Contacto::modificarApellido(string apellido){
-    
+    apellido = apellido;
 }
 
 void Contacto::modificarDireccion(string direccion){
-    
+    direccion = direccion;
 }
 
 void Contacto::modificarCorreoElectronico(string email){
-    
+    correoElectronico = email;
 }
 
 void Contacto::agregarTelefono(string numero){
@@ -56,7 +57,7 @@ void Contacto::agregarPalabraClave(string palabra){
 }
 
 string Contacto::mostrarTelefonos(){
-
+    
 }
 
 string Contacto::mostrarPalabrasClave(){
