@@ -23,6 +23,8 @@ Colaboracion: Libreta.h
               
 */
 
+#ifndef __CLASSCONTACTO
+#define __CLASSCONTACTO 
 
 #include <iostream>
 #include <vector>
@@ -43,6 +45,7 @@ public:
     Contacto(string nombre,string apellido,string direccion,string correoElectronico);
     Contacto();
     ~Contacto();
+    string colocarNombre(string vNombre);
     string darNombre();
     string darApellido();
     string darDireccion();
@@ -64,3 +67,5 @@ public:
     int darTamanoPalabrasClave();
     string darUnaPalabraClave(int id);
 };
+
+#endif //__CLASSCONTACTO

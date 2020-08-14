@@ -26,8 +26,11 @@ Colaboracion: Contacto.h
               
 */
 
-
-#include "Libreta.h" 
+#include <stdlib.h>
+#include "Libreta.h"
+#include "Contacto.h"
+#include <iostream>
+#include <string>
 
 using namespace std;
 

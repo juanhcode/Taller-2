@@ -1,9 +1,14 @@
 #include "./Libreta.h"
+#include <math.h>
+#include <iostream>
 
 Libreta::Libreta(){
 
+    for (int i = 0; i != agenda.size(); i++)
+    {
+       
+    }
     
-
 }
 
 Libreta::~Libreta(){
@@ -11,7 +16,7 @@ Libreta::~Libreta(){
 }
 
 void Libreta::agregarContacto(Contacto nuevoContacto){
-
+    agenda.push_back(nuevoContacto);
 }
 
 void Libreta::eliminarContacto(std::string nombre, std::string apellido){

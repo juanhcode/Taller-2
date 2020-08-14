@@ -3,6 +3,10 @@
 #include "Contacto.h"
 using namespace std;
 
+#ifndef __CLASSLIBRETA
+#define __CLASSLIBRETA
+
+
 class Libreta
 {
     private:
@@ -25,3 +29,4 @@ class Libreta
 
 };
 
+#endif //__CLASSLIBRETA

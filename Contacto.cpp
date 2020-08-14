@@ -1,20 +1,26 @@
 #include "Contacto.h"
+#include <math.h>
+#include <iostream>
 
-Contacto::Contacto(string nombre,string apellido,string direccion,string correoElectronico){
+Contacto::Contacto(string dNombre,string dApellido,string dDireccion,string dCorreoElectronico){
     
-    nombre = nombre;
-    apellido = apellido;
-    direccion = direccion;
-    correoElectronico = correoElectronico;
+    nombre = dNombre;
+    apellido = dApellido;
+    direccion = dDireccion;
+    correoElectronico = dCorreoElectronico;
 }
 
 Contacto::Contacto(){
 
 }
+
 Contacto::~Contacto(){
 
 }
 
+string Contacto::colocarNombre(string vNombre){
+    return vNombre;
+}
 
 string Contacto::darNombre(){
     return nombre;
@@ -49,11 +55,11 @@ void Contacto::modificarCorreoElectronico(string email){
 }
 
 void Contacto::agregarTelefono(string numero){
-    
+    numero; //Revisar
 }
 
 void Contacto::agregarPalabraClave(string palabra){
-    
+    palabra; //Revisar
 }
 
 string Contacto::mostrarTelefonos(){

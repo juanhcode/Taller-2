@@ -1,11 +1,10 @@
 #include "Menu.h"
-#include <iostream>
-using namespace std;
-
+#include <cstdlib>
 
 Menu::Menu()
 {
 	opcion = 0;
+	Contacto erg;
 }
 
 Menu::~Menu()
@@ -15,8 +14,8 @@ Menu::~Menu()
 
 void Menu::seleccionarOpcion()
 {
-	cout<<endl;
-	cout<<"          AGENDA          "<<endl;
+	cout << endl;
+	cout << "          AGENDA          " << endl;
 	cout << "1 - Agregar contacto" << endl;
 	cout << "2 - Eliminar Contacto" << endl;
 	cout << "3 - Ver informacion de contacto" << endl;
@@ -56,14 +55,12 @@ void Menu::visualizar()
 				break;
 
 			case 5:
-
+				Libreta();
 				break;
 
 			case 6:
 
 				break;
-
-
 			}
 			system("cls");
 		}
@@ -71,13 +68,14 @@ void Menu::visualizar()
 	} while (opcion != 7);
 }
 
-void Menu::seleccionarInformacionContacto() {
-	cout<<"Datos para guardar Contactos"<<endl;
-	cout<<"1-Nombre"<<endl;
-	cout<<"2-Apellido"<<endl;
-	cout<<"3-Direccion"<<endl;
-	cout<<"4-E-Mail"<<endl;
-	cout<<"5-Ir al Menu"<<endl;
+void Menu::seleccionarInformacionContacto()
+{
+	cout << "Datos para guardar Contactos" << endl;
+	cout << "1-Nombre" << endl;
+	cout << "2-Apellido" << endl;
+	cout << "3-Direccion" << endl;
+	cout << "4-E-Mail" << endl;
+	cout << "5-Ir al Menu" << endl;
 	do
 	{
 		cout << "Introduza Opcion: ";
@@ -85,9 +83,10 @@ void Menu::seleccionarInformacionContacto() {
 	} while (!((opcion >= 1) && (opcion <= 5)));
 }
 
-void Menu::guardarContactos() {
-	
-	string nombre;
+void Menu::guardarContactos()
+{
+
+	string vNombre;
 	string apellido;
 	string direccion;
 	string e_mail;
@@ -98,39 +97,42 @@ void Menu::guardarContactos() {
 			switch (opcion)
 			{
 			case 1:
-				cout<<"Digite el Nombre"<<endl;
-				cin>>nombre;
+				cout << "Digite el Nombre" << endl;
+				cin >> vNombre;
+				//e1.colocarNombre(vNombre);
+				system("pause");
+
 				break;
 			case 2:
-				cout<<"Digite el Apellido"<<endl;
-				cin>>opcion;
+				cout << "Digite el Apellido" << endl;
+				cin >> apellido;
 				break;
 			case 3:
-				cout<<"Digite la Direccion"<<endl;
-				cin>>opcion;
+				cout << "Digite la Direccion" << endl;
+				cin >> direccion;
 				break;
 			case 4:
-				cout<<"Digite el E-Mail"<<endl;
-				cin>>opcion;
+				cout << "Digite el E-Mail" << endl;
+				cin >> e_mail;
 				break;
 
 			default:
-				cout<<"Opcion Invalida"<<endl;
+				cout << "Opcion Invalida" << endl;
 				break;
 			}
 			system("cls");
 		}
 	} while (opcion != 5);
-
 }
 
-void Menu::seleccionarInformacionModificar() {
-	cout<<"Introduzca la opcion que quiera modificar"<<endl;
-	cout<<"1-Nombre"<<endl;
-	cout<<"2-Apellido"<<endl;
-	cout<<"3-Direccion"<<endl;
-	cout<<"4-E-Mail"<<endl;
-	cout<<"5-Ir al Menu"<<endl;
+void Menu::seleccionarInformacionModificar()
+{
+	cout << "Introduzca la opcion que quiera modificar" << endl;
+	cout << "1-Nombre" << endl;
+	cout << "2-Apellido" << endl;
+	cout << "3-Direccion" << endl;
+	cout << "4-E-Mail" << endl;
+	cout << "5-Ir al Menu" << endl;
 	do
 	{
 		cout << "Introduza Opcion: ";
@@ -138,8 +140,9 @@ void Menu::seleccionarInformacionModificar() {
 	} while (!((opcion >= 1) && (opcion <= 5)));
 }
 
-void Menu::modificarInformacion() {
-	
+void Menu::modificarInformacion()
+{
+
 	do
 	{
 		seleccionarInformacionModificar();
@@ -147,25 +150,23 @@ void Menu::modificarInformacion() {
 			switch (opcion)
 			{
 			case 1:
-				cout<<"Digite el Nuevo Nombre"<<endl;
+				cout << "Digite el Nuevo Nombre" << endl;
 				break;
 			case 2:
-				cout<<"Digite el Nuevo Apellido"<<endl;
+				cout << "Digite el Nuevo Apellido" << endl;
 				break;
 			case 3:
-				cout<<"Digite la Nueva Direccion"<<endl;
+				cout << "Digite la Nueva Direccion" << endl;
 				break;
 			case 4:
-				cout<<"Digite el Nuevo E-Mail"<<endl;
+				cout << "Digite el Nuevo E-Mail" << endl;
 				break;
 
 			default:
-				cout<<"Opcion Invalida"<<endl;
+				cout << "Opcion Invalida" << endl;
 				break;
 			}
 			system("cls");
-
 		}
 	} while (opcion != 5);
-
 }
