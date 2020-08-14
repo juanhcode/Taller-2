@@ -4,10 +4,6 @@
 
 Libreta::Libreta(){
 
-    for (int i = 0; i != agenda.size(); i++)
-    {
-       
-    }
     
 }
 
@@ -40,7 +36,28 @@ void Libreta::escribirListaDeContactos(){
 }
 
 void Libreta::listaCompletaDeContactos(){
+    for (int i = 0; i < agenda.size(); i++)
+    {
+        cout<<"Nombre: "<<agenda[i].darNombre()<<endl;
+        cout<<"Apellido: "<<agenda[i].darApellido()<<endl;
+        cout<<"Direccion: "<<agenda[i].darDireccion()<<endl;
+        cout<<"E-Mail: "<<agenda[i].darCorreoElectronico()<<endl;
 
+        for (int j = 0; j < agenda[i].darTelefonos().size(); j++)
+        {
+            cout<<"telefono  "<<(j+1)<<" : "<<agenda[i].darTelefonos()[j]<<endl;
+
+        }
+
+        for (int j = 0; j < agenda[i].darPalabrasClave().size(); j++)
+        {
+            cout<<"Palabra  "<<(j+1)<<" : "<<agenda[i].darPalabrasClave()[j]<<endl;
+
+        }
+        
+    }
+
+    
 }
 
 int Libreta::busquedaPorPalabrasClave(std::string palabra){

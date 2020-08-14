@@ -17,11 +17,7 @@ Contacto::Contacto(){
 Contacto::~Contacto(){
 
 }
-
-string Contacto::colocarNombre(string vNombre){
-    return vNombre;
-}
-
+//Get
 string Contacto::darNombre(){
     return nombre;
 }
@@ -37,37 +33,40 @@ string Contacto::darDireccion(){
 string Contacto::darCorreoElectronico(){
     return correoElectronico;
 }
+//
 
 void Contacto::modificarNombre(string nombre){
-    nombre = nombre;
+    this->nombre = nombre;
 }
 
+
+
 void Contacto::modificarApellido(string apellido){
-    apellido = apellido;
+    this->apellido = apellido;
 }
 
 void Contacto::modificarDireccion(string direccion){
-    direccion = direccion;
+    this->direccion = direccion;
 }
 
 void Contacto::modificarCorreoElectronico(string email){
-    correoElectronico = email;
+    this->correoElectronico = email;
 }
 
 void Contacto::agregarTelefono(string numero){
-    numero; //Revisar
+    telefonos.push_back(numero);
 }
 
 void Contacto::agregarPalabraClave(string palabra){
-    palabra; //Revisar
+    PalabrasClave.push_back(palabra);
 }
 
-string Contacto::mostrarTelefonos(){
-    
+vector<string> Contacto::darTelefonos(){
+    return telefonos;
 }
 
-string Contacto::mostrarPalabrasClave(){
-    
+vector<string> Contacto::darPalabrasClave(){
+    return PalabrasClave;
 }
 
 string Contacto::estaUnTelefono(string numero){

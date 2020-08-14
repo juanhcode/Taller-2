@@ -45,7 +45,6 @@ public:
     Contacto(string nombre,string apellido,string direccion,string correoElectronico);
     Contacto();
     ~Contacto();
-    string colocarNombre(string vNombre);
     string darNombre();
     string darApellido();
     string darDireccion();
@@ -54,10 +53,11 @@ public:
     void modificarApellido(string apellido);
     void modificarDireccion(string direccion);
     void modificarCorreoElectronico(string email);
+    
     void agregarTelefono(string numero);
     void agregarPalabraClave(string palabra);
-    string mostrarTelefonos();
-    string mostrarPalabrasClave();
+    vector<string> darTelefonos();
+    vector<string> darPalabrasClave();
     string estaUnTelefono(string numero);
     void eliminarTelefono(string numero);
     string estaUnaPalabraClave(string palabra);
