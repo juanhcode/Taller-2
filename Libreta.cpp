@@ -21,23 +21,24 @@ void Libreta::eliminarContacto(std::string nombre, std::string apellido){
 
 bool Libreta::estaUnContacto(std::string nombre, std::string apellido){
 
+
+
 }
 
 int Libreta::retornarIdDeContacto(std::string nombre, std::string apellido){
 
 }
 
-void Libreta::modificarInfoDeContacto(std::string nombre, std::string apellido, int parametro, std::string info){
+int Libreta::modificarInfoDeContacto(){
 
-}
 
-void Libreta::escribirListaDeContactos(){
 
 }
 
 void Libreta::listaCompletaDeContactos(){
     for (int i = 0; i < agenda.size(); i++)
     {
+        
         cout<<"Nombre: "<<agenda[i].darNombre()<<endl;
         cout<<"Apellido: "<<agenda[i].darApellido()<<endl;
         cout<<"Direccion: "<<agenda[i].darDireccion()<<endl;
@@ -53,8 +54,8 @@ void Libreta::listaCompletaDeContactos(){
         {
             cout<<"Palabra  "<<(j+1)<<" : "<<agenda[i].darPalabrasClave()[j]<<endl;
 
-        }
-        
+        }      
+        cout<<"-----------------------------------------------------------------"<<endl;
     }
 
     

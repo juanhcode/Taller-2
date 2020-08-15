@@ -1,10 +1,15 @@
 #include "Menu.h"
 #include <cstdlib>
-
+string nombre;
+string apellido;
+string direccion;
+string e_mail;
+string telefonoF;
+int telefono;
+string palabra;
 Menu::Menu()
 {
 	opcion = 0;
-	
 }
 
 Menu::~Menu()
@@ -43,7 +48,7 @@ void Menu::visualizar()
 				guardarContactos();
 				break;
 			case 2:
-                eliminarContactos();
+				eliminarContactos();
 				break;
 
 			case 3:
@@ -71,82 +76,48 @@ void Menu::visualizar()
 
 void Menu::guardarContactos()
 {
-	string vNombre;
-	string apellido;
-	string direccion;
-	string e_mail;
-	string telefonoF;
-	int telefono;
-	string palabra;
 
-	cout<<"Digite el nombre"<<endl;
-	cin>>vNombre;
+	cout << "Digite el nombre" << endl;
+	cin >> nombre;
 
-	cout<<"Digite el apellido"<<endl;
-	cin>>apellido;
+	cout << "Digite el apellido" << endl;
+	cin >> apellido;
 
-	cout<<"Digite la direccion"<<endl;
-	cin>>direccion;
+	cout << "Digite la direccion" << endl;
+	cin >> direccion;
+
 	fflush(stdin);
 
-	cout<<"Digite el E-Mail"<<endl;
-	cin>>e_mail;
+	cout << "Digite el E-Mail" << endl;
+	cin >> e_mail;
+
 	fflush(stdin);
 
-	cout<<"Cuantos numeros telefonicos desea agregar"<<endl;
-	cin>>telefono;
+	Contacto con(nombre, apellido, direccion, e_mail);
 
-	Contacto con(vNombre,apellido,direccion,e_mail);
+	cout << "Cuantos numeros telefonicos desea agregar" << endl;
+	cin >> telefono;
 
 	for (int i = 0; i < telefono; i++)
 	{
-		cout<<"Digite el telefono  "<<(i+1)<<endl;
-		cin>>telefonoF;
+		cout << "Digite el telefono  " << (i + 1) << endl;
+		cin >> telefonoF;
 		con.agregarTelefono(telefonoF);
 	}
 
-	cout<<"Cuantos palabras claves tiene"<<endl;
-	cin>>telefono;
+	cout << "Cuantos palabras claves tiene" << endl;
+	cin >> telefono;
 
 	for (int i = 0; i < telefono; i++)
 	{
-		cout<<"Digite la palabra  "<<(i+1)<<endl;
-		cin>>palabra;
+		cout << "Digite la palabra  " << (i + 1) << endl;
+		cin >> palabra;
 		con.agregarPalabraClave(palabra);
 	}
 
 	libreta.agregarContacto(con);
 	system("pause");
-	
 }
-
-void Menu::eliminarContactos()
-{
-    string vNombre;
-	string apellido;
-	string direccion;
-	string e_mail;
-	string telefonoF;
-	int telefono;
-
-	cout << "1 - Ver lista de contactos"<< endl;
-	cout << "2 - Ir al menu"<< endl;
-
-	do 
-	{
-		cout << "Introduzca Opcion" << endl;
-		cin>>opcion;
-	}while  (!((opcion >= 1) && (opcion <= 2)));
-
-	Menu::libreta.listaCompletaDeContactos();
-	cout <<"Eliga el contacto que desea eliminar"<< endl;
-    
-
-
-	
-	
-}
-
 void Menu::seleccionarInformacionModificar()
 {
 	cout << "Introduzca la opcion que quiera modificar" << endl;
@@ -157,7 +128,7 @@ void Menu::seleccionarInformacionModificar()
 	cout << "5-Ir al Menu" << endl;
 	do
 	{
-		 
+
 		cout << "Introduza Opcion: ";
 		cin >> opcion;
 	} while (!((opcion >= 1) && (opcion <= 5)));
@@ -165,39 +136,92 @@ void Menu::seleccionarInformacionModificar()
 
 void Menu::modificarInformacion()
 {
-	string nuevoNombre;
-	string nuevoApellido;
-	string nuevaDireccion;
-	string nuevoEmail;
+
 	do
 	{
 		seleccionarInformacionModificar();
 		{
+			/*system("cls");
+        cout<<"< = = = = = F A B R I C A de F O R R O S para V E H I C U L O S = = = = = >";
+        cout<<"\n\nOpcion 3: Modificar Datos de los Trabajadores";
+        cout<<"\n\nIngrese el Numero de Cedula: ";
+        cin>>modificar;
+
+        for (i = 0 ; i < 3 ; i++)
+        {
+            if (modificar == cedula[i])
+            {
+                cout<<"\n\n------------------------------------";
+                cout<<"\n\nNombre del Trabajador: "<<nombre[i];
+                cout<<"\n\nCedula: "<<cedula[i];
+                cout<<"\n\n------------------------------------";
+            }       
+        }*/
+
+			break;
 			switch (opcion)
 			{
 			case 1:
 				cout << "Digite el Nuevo Nombre" << endl;
-				cin>>nuevoNombre;
+				cin >> nombre;
 
 				break;
 			case 2:
 				cout << "Digite el Nuevo Apellido" << endl;
-				cin>>nuevoApellido;
+				cin >> apellido;
 				break;
 			case 3:
 				cout << "Digite la Nueva Direccion" << endl;
 				break;
-				cin>>nuevaDireccion;
+				cin >> direccion;
 			case 4:
 				cout << "Digite el Nuevo E-Mail" << endl;
-				cin>>nuevoEmail;
+				cin >> e_mail;
 				break;
 
 			default:
 				cout << "Opcion Invalida" << endl;
 				break;
 			}
-			system("cls");
 		}
+		system("cls");
 	} while (opcion != 5);
+}
+
+///
+void Menu::eliminarContactos()
+{
+	string vNombre;
+	string apellido;
+	string direccion;
+	string e_mail;
+	string telefonoF;
+	int telefono;
+	string persona;
+	
+
+	cout << "1 - Ver lista de contactos" << endl;
+	cout << "2 - Ir al menu" << endl;
+
+	//Propiedad intelectual de el perro
+	do
+	{
+		cout << "Introduzca Opcion" << endl;
+		cin >> opcion;
+	} while (!((opcion >= 1) && (opcion <= 2)));
+
+	libreta.listaCompletaDeContactos();
+
+	switch (opcion)
+	{
+	case 1:
+		libreta.listaCompletaDeContactos();
+		cout << "Elija el contacto que desea eliminar" << endl;
+		cin>> persona;
+        system("pause");
+		break;
+	
+	default:
+		break;
+	}
 }

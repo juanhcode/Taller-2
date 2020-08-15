@@ -46,7 +46,7 @@ void Contacto::modificarApellido(string apellido){
 }
 
 void Contacto::modificarDireccion(string direccion){
-    this->direccion = direccion;
+    this->direccion = direccion; 
 }
 
 void Contacto::modificarCorreoElectronico(string email){

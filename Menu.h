@@ -46,12 +46,12 @@ class Menu
           void visualizar();
           void guardarContactos();
           void seleccionarInformacionModificar();
-          void modificarInformacion();	
+          void modificarInformacion();
+          void eliminarContactos();
 
 	private:
           int opcion;
           Libreta libreta;
-         
 		
 };
 

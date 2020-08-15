@@ -28,6 +28,7 @@ Colaboracion: Libreta.h
 
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 class Contacto
@@ -56,8 +57,10 @@ public:
     
     void agregarTelefono(string numero);
     void agregarPalabraClave(string palabra);
+    //
     vector<string> darTelefonos();
     vector<string> darPalabrasClave();
+    //
     string estaUnTelefono(string numero);
     void eliminarTelefono(string numero);
     string estaUnaPalabraClave(string palabra);
