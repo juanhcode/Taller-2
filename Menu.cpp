@@ -43,7 +43,7 @@ void Menu::visualizar()
 				guardarContactos();
 				break;
 			case 2:
-
+                eliminarContactos();
 				break;
 
 			case 3:
@@ -117,6 +117,33 @@ void Menu::guardarContactos()
 
 	libreta.agregarContacto(con);
 	system("pause");
+	
+}
+
+void Menu::eliminarContactos()
+{
+    string vNombre;
+	string apellido;
+	string direccion;
+	string e_mail;
+	string telefonoF;
+	int telefono;
+
+	cout << "1 - Ver lista de contactos"<< endl;
+	cout << "2 - Ir al menu"<< endl;
+
+	do 
+	{
+		cout << "Introduzca Opcion" << endl;
+		cin>>opcion;
+	}while  (!((opcion >= 1) && (opcion <= 2)));
+
+	Menu::libreta.listaCompletaDeContactos();
+	cout <<"Eliga el contacto que desea eliminar"<< endl;
+    
+
+
+	
 	
 }
 
