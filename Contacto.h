@@ -11,7 +11,6 @@ Autor: Juan Manuel Hoyos Contreras - 201958950-2711
 
 E-mail:				: juan.manuel.hoyos@correounivalle.edu.co
     				: vargas.steven@correounivalle.edu.co
-                    : Emanuel.benjumea@correounivalle.edu.co
                     : gallego.cesar@correounivalle.edu.co
                     : cifuentes.sebastian@correounivalle.edu.co
 */
@@ -69,6 +68,7 @@ public:
     string darUnTelefono(int id);
     int darTamanoPalabrasClave();
     string darUnaPalabraClave(int id);
+
 };
 
 #endif //__CLASSCONTACTO

@@ -9,9 +9,8 @@ Autor: Juan Manuel Hoyos Contreras - 201958950-2711
      : Steven Vargas Gonzalez - 1958675-2711
      : sebastian cifuentes florez - 201959077-2711
 
-E-mail:				: juan.manuel.hoyos@correounivalle.edu.co
+E-mail:			: juan.manuel.hoyos@correounivalle.edu.co
     				: vargas.steven@correounivalle.edu.co
-                    : Emanuel.benjumea@correounivalle.edu.co
                     : gallego.cesar@correounivalle.edu.co
                     : cifuentes.sebastian@correounivalle.edu.co
 */
@@ -48,6 +47,7 @@ class Menu
           void seleccionarInformacionModificar();
           void modificarInformacion();
           void eliminarContactos();
+          void buscarContactos();
 
 	private:
           int opcion;

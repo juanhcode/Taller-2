@@ -1,5 +1,6 @@
 #include "Menu.h"
 #include <cstdlib>
+
 string nombre;
 string apellido;
 string direccion;
@@ -7,6 +8,7 @@ string e_mail;
 string telefonoF;
 int telefono;
 string palabra;
+
 Menu::Menu()
 {
 	opcion = 0;
@@ -26,7 +28,7 @@ void Menu::seleccionarOpcion()
 	cout << "3 - Ver informacion de contacto" << endl;
 	cout << "4 - Modificar informacion" << endl;
 	cout << "5 - Mostrar lista de contacto" << endl;
-	cout << "6 - Buscar contactos" << endl; //buscar contactos con palabras claves
+	cout << "6 - Buscar contacto " << endl; //buscar contactos con palabras claves
 	cout << "7 - Salir" << endl;
 	do
 	{
@@ -65,6 +67,7 @@ void Menu::visualizar()
 				break;
 
 			case 6:
+				buscarContactos();
 
 				break;
 			}
@@ -198,7 +201,7 @@ void Menu::eliminarContactos()
 	string telefonoF;
 	int telefono;
 	string persona;
-	
+	int contacto;
 
 	cout << "1 - Ver lista de contactos" << endl;
 	cout << "2 - Ir al menu" << endl;
@@ -211,16 +214,39 @@ void Menu::eliminarContactos()
 	} while (!((opcion >= 1) && (opcion <= 2)));
 
 	libreta.listaCompletaDeContactos();
+	do
+	{
+	 cout << "Elija el usuario que desea eliminar" <<endl;
+	 cin>>contacto;
+	 
+	} while (!((contacto >= 1) && (contacto <= 10)));
+	system("Pause");
+	
+}
+
+void Menu::buscarContactos()
+{
+	string busqueda;
+
+	cout << "1 - Buscar Contactos" << endl;
+	cout << "2 - Ir al menu" << endl;
+
+	//Propiedad intelectual de el perro
+	do
+	{
+		cout << "Introduzca Opcion" << endl;
+		cin >> opcion;
+	} while (!((opcion >= 1) && (opcion <= 2)));
 
 	switch (opcion)
 	{
 	case 1:
 		libreta.listaCompletaDeContactos();
-		cout << "Elija el contacto que desea eliminar" << endl;
-		cin>> persona;
-        system("pause");
+		cout << "introduzca la pabra clave del contacto qe deseas buscar" << endl;
+		cin >> busqueda;
+		system("pause");
 		break;
-	
+
 	default:
 		break;
 	}
