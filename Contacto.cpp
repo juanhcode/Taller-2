@@ -30,6 +30,19 @@ string Contacto::darDireccion(){
     return direccion;
 }
 
+bool Contacto::darBuscarPalabraClave(string palabraM){
+    for (int i = 0; i < PalabrasClave.size(); i++)
+    {
+        if (palabraM == PalabrasClave[i])
+        {
+            return true;
+        }
+        
+    }
+    return false;
+}
+
+
 string Contacto::darCorreoElectronico(){
     return correoElectronico;
 }

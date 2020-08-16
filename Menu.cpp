@@ -54,7 +54,8 @@ void Menu::visualizar()
 				break;
 
 			case 3:
-
+				libreta.verInformacion();
+				system("pause");
 				break;
 
 			case 4:
@@ -119,9 +120,6 @@ void Menu::guardarContactos()
 	}
 
 	libreta.agregarContacto(con);
-
-	cout << "Digite el nuevo nombre" << endl;
-
 	system("pause");
 }
 void Menu::seleccionarInformacionModificar()
@@ -142,39 +140,55 @@ void Menu::seleccionarInformacionModificar()
 
 void Menu::modificarInformacion()
 {
-
-	do
+	int aux;
+	bool var = true;
+	libreta.listaCompletaDeContactos();
+	cout << "Digite el numero del contacto al cual quiere modificar" << endl;
+	cin >> aux;
+	if ((aux < 0) || (aux > libreta.darTamanio()))
 	{
-		seleccionarInformacionModificar();
+		var = false;
+	}
+
+	if (var == true)
+	{
+		do
 		{
-			switch (opcion)
+			seleccionarInformacionModificar();
 			{
-			case 1:
-				cout << "Digite el Nuevo Nombre" << endl;
-				cin >> nombre;
+				switch (opcion)
+				{
+				case 1:
+					cout << "Digite el Nuevo Nombre" << endl;
+					cin >> nombre;
 
-				break;
-			case 2:
-				cout << "Digite el Nuevo Apellido" << endl;
-				cin >> apellido;
-				break;
-			case 3:
-				cout << "Digite la Nueva Direccion" << endl;
-				break;
-				cin >> direccion;
-			case 4:
-				cout << "Digite el Nuevo E-Mail" << endl;
-				cin >> e_mail;
-				break;
+					break;
+				case 2:
+					cout << "Digite el Nuevo Apellido" << endl;
+					cin >> apellido;
+					break;
+				case 3:
+					cout << "Digite la Nueva Direccion" << endl;
+					break;
+					cin >> direccion;
+				case 4:
+					cout << "Digite el Nuevo E-Mail" << endl;
+					cin >> e_mail;
+					break;
 
-			default:
-				cout << "Opcion Invalida" << endl;
-				break;
+				default:
+					cout << "Opcion Invalida" << endl;
+					break;
+				}
+				libreta.modificarInfoDeContacto(nombre, apellido, direccion, e_mail, aux - 1);
 			}
-			libreta.modificarInfoDeContacto(nombre, apellido, direccion);
-		}
-		system("cls");
-	} while (opcion != 5);
+			system("cls");
+		} while (opcion != 5);
+	}
+	else
+	{
+		cout << "digite un valor valido" << endl;
+	}
 }
 
 ///
@@ -192,7 +206,6 @@ void Menu::eliminarContactos()
 	cout << "1 - Ver lista de contactos" << endl;
 	cout << "2 - Ir al menu" << endl;
 
-	//Propiedad intelectual de el perro
 	do
 	{
 		cout << "Introduzca Opcion" << endl;
@@ -200,22 +213,20 @@ void Menu::eliminarContactos()
 	} while (!((opcion >= 1) && (opcion <= 2)));
 
 	libreta.listaCompletaDeContactos();
-	do
-	{
-		cout << "digite el nombre" << endl;
-		cin >> nombre;
-		cout << "digite el apellido" << endl;
-		cin >> apellido;
 
-		libreta.eliminarContacto(nombre, apellido);
+	cout << "digite el nombre" << endl;
+	cin >> nombre;
+	cout << "digite el apellido" << endl;
+	cin >> apellido;
 
-	} while (!((contacto >= 1) && (contacto <= 10)));
+	libreta.eliminarContacto(nombre, apellido);
 	system("Pause");
 }
 
 void Menu::buscarContactos()
 {
-	string busqueda;
+	string palabra;
+	int aux;
 
 	cout << "1 - Buscar Contactos" << endl;
 	cout << "2 - Ir al menu" << endl;
@@ -229,14 +240,25 @@ void Menu::buscarContactos()
 	switch (opcion)
 	{
 	case 1:
-		cout << "introduzca la pabra clave del contacto qe deseas buscar" << endl;
-		cin >> busqueda;
-
-		libreta.busquedaPorPalabrasClave(busqueda);
+		cout << "introduzca la palabra clave del contacto que deseas buscar" << endl;
+		cin >> palabra;
+		aux = libreta.busquedaPorPalabrasClave(palabra);
+		if (aux == -1)
+		{
+			cout << "No se encuentra el contacto" << endl;
+		}
+		else
+		{
+			libreta.listaCompletaDeContactos(aux);
+		}
 
 		system("pause");
 		break;
 	default:
 		break;
 	}
+}
+
+void Menu::verInformacion(){
+
 }

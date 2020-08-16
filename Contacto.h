@@ -53,6 +53,7 @@ public:
     void modificarApellido(string apellido);
     void modificarDireccion(string direccion);
     void modificarCorreoElectronico(string email);
+    bool darBuscarPalabraClave(string palabraM);
     
     void agregarTelefono(string numero);
     void agregarPalabraClave(string palabra);

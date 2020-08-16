@@ -20,11 +20,11 @@ void Libreta::eliminarContacto(std::string nombre, std::string apellido)
 {
     for (int i = 0; i < agenda.size(); i++)
     {
-        if ((nombre == agenda[i].darNombre())and (apellido == agenda[i].darApellido() ));
+        if ((nombre == agenda[i].darNombre()) and (apellido == agenda[i].darApellido()))
+            ;
         {
-           cout<<"Hola"<<endl;
+            agenda.erase(agenda.begin() + (i + 1));
         }
-        
     }
 }
 
@@ -36,21 +36,20 @@ int Libreta::retornarIdDeContacto(std::string nombre, std::string apellido)
 {
 }
 
-int Libreta::modificarInfoDeContacto(string nombre, string apellido, string direccion)
+int Libreta::modificarInfoDeContacto(string nombre, string apellido, string direccion, string e_mail, int i)
 {
 
-    for (int i = 0; i < agenda.size(); i++)
-    {
-        agenda[i].modificarNombre(nombre);
-        agenda[i].modificarApellido(apellido);
-        agenda[i].modificarDireccion(direccion);
-    }
+    agenda[i].modificarNombre(nombre);
+    agenda[i].modificarApellido(apellido);
+    agenda[i].modificarDireccion(direccion);
+    agenda[i].modificarCorreoElectronico(e_mail);
 }
 
 void Libreta::listaCompletaDeContactos()
 {
     for (int i = 0; i < agenda.size(); i++)
     {
+        cout << " Contacto: # " << (i + 1) << endl;
 
         cout << "Nombre: " << agenda[i].darNombre() << endl;
         cout << "Apellido: " << agenda[i].darApellido() << endl;
@@ -72,18 +71,66 @@ void Libreta::listaCompletaDeContactos()
 
 int Libreta::busquedaPorPalabrasClave(std::string palabra)
 {
-    string busqueda;
-
-    if (palabra == busqueda)
+    bool estado = false;
+    int aux;
+    for (int i = 0; i < agenda.size(); i++)
     {
-        busquedaPorPalabrasClave(busqueda);
+        if (agenda[i].darBuscarPalabraClave(palabra) == true)
+        {
+            estado = true;
+            aux = i;
+        }
+    }
+    if (estado == false)
+    {
+        return -1;
     }
     else
     {
-        cout << "su contacto no existe ";
+        return aux;
     }
 }
-
 Contacto busquedaPorId(int id)
 {
+}
+
+void Libreta::listaCompletaDeContactos(int i)
+{
+
+    cout << "Nombre: " << agenda[i].darNombre() << endl;
+    cout << "Apellido: " << agenda[i].darApellido() << endl;
+    cout << "Direccion: " << agenda[i].darDireccion() << endl;
+    cout << "E-Mail: " << agenda[i].darCorreoElectronico() << endl;
+
+    for (int j = 0; j < agenda[i].darTelefonos().size(); j++)
+    {
+        cout << "telefono  " << (j + 1) << " : " << agenda[i].darTelefonos()[j] << endl;
+    }
+
+    for (int j = 0; j < agenda[i].darPalabrasClave().size(); j++)
+    {
+        cout << "Palabra  " << (j + 1) << " : " << agenda[i].darPalabrasClave()[j] << endl;
+    }
+    cout << "-----------------------------------------------------------------" << endl;
+}
+int Libreta::darTamanio()
+{
+    return agenda.size();
+}
+void Libreta::verInformacion()
+{
+
+    int n;
+    for (int i = 0; i < agenda.size(); i++)
+    {
+        
+        cout << "Contacto: # " << (i + 1) << endl;
+        cout << "Nombre: " << agenda[i].darNombre() << endl;
+        cout << "Apellido: " << agenda[i].darApellido() << endl;
+    }
+
+    cout<<"digite el numero a el cual quiera acceder"<<endl;
+    cin>>n;
+
+    listaCompletaDeContactos(n-1);
 }

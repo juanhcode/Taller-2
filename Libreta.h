@@ -21,11 +21,14 @@ class Libreta
     void eliminarContacto(std::string nombre, std::string apellido);
     bool estaUnContacto(std::string nombre, std::string apellido);
     int retornarIdDeContacto(std::string nombre, std::string apellido);
-    int modificarInfoDeContacto(string nombre,string apellido,string direccion);
+    int modificarInfoDeContacto(string nombre,string apellido,string direccion,string e_mail,int i);
     void escribirListaDeContactos();
     void listaCompletaDeContactos();
+    void listaCompletaDeContactos(int i);
     int busquedaPorPalabrasClave(std::string palabra);
     Contacto busquedaPorId(int id);
+    int darTamanio();
+    void verInformacion();
 
 };
 

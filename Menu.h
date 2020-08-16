@@ -48,6 +48,7 @@ class Menu
           void modificarInformacion();
           void eliminarContactos();
           void buscarContactos();
+          void verInformacion();
 
 	private:
           int opcion;
