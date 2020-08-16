@@ -216,12 +216,12 @@ void Menu::eliminarContactos()
 	libreta.listaCompletaDeContactos();
 	do
 	{
-	 cout << "Elija el usuario que desea eliminar" <<endl;
-	 cin>>contacto;
-	 
+		cout << "Elija el usuario que desea eliminar" << endl;
+		cin >> contacto;
+		libreta.eliminarContacto(nombre,apellido);
+
 	} while (!((contacto >= 1) && (contacto <= 10)));
 	system("Pause");
-	
 }
 
 void Menu::buscarContactos()
@@ -231,7 +231,6 @@ void Menu::buscarContactos()
 	cout << "1 - Buscar Contactos" << endl;
 	cout << "2 - Ir al menu" << endl;
 
-	//Propiedad intelectual de el perro
 	do
 	{
 		cout << "Introduzca Opcion" << endl;
@@ -244,9 +243,12 @@ void Menu::buscarContactos()
 		libreta.listaCompletaDeContactos();
 		cout << "introduzca la pabra clave del contacto qe deseas buscar" << endl;
 		cin >> busqueda;
+
+		libreta.busquedaPorPalabrasClave(busqueda)   ;
+
+		
 		system("pause");
 		break;
-
 	default:
 		break;
 	}

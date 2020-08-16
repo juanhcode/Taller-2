@@ -15,8 +15,8 @@ void Libreta::agregarContacto(Contacto nuevoContacto){
     agenda.push_back(nuevoContacto);
 }
 
-void Libreta::eliminarContacto(std::string nombre, std::string apellido){
-
+void Libreta::eliminarContacto(std::string nombre, std::string apellido){     
+    
 }
 
 bool Libreta::estaUnContacto(std::string nombre, std::string apellido){
@@ -62,8 +62,28 @@ void Libreta::listaCompletaDeContactos(){
 }
 
 int Libreta::busquedaPorPalabrasClave(std::string palabra){
+    string busqueda;
+
+
+    if (palabra == busqueda)
+		{
+			busquedaPorPalabrasClave(busqueda)   ;
+		}
+		else
+		{
+			cout << "su contacto no existe ";
+		}
+
+    
+
 
 }
+
+
+
+
+    
+
 
 Contacto busquedaPorId(int id){
 
