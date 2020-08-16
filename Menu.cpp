@@ -119,6 +119,9 @@ void Menu::guardarContactos()
 	}
 
 	libreta.agregarContacto(con);
+
+	cout << "Digite el nuevo nombre" << endl;
+
 	system("pause");
 }
 void Menu::seleccionarInformacionModificar()
@@ -144,24 +147,6 @@ void Menu::modificarInformacion()
 	{
 		seleccionarInformacionModificar();
 		{
-			/*system("cls");
-        cout<<"< = = = = = F A B R I C A de F O R R O S para V E H I C U L O S = = = = = >";
-        cout<<"\n\nOpcion 3: Modificar Datos de los Trabajadores";
-        cout<<"\n\nIngrese el Numero de Cedula: ";
-        cin>>modificar;
-
-        for (i = 0 ; i < 3 ; i++)
-        {
-            if (modificar == cedula[i])
-            {
-                cout<<"\n\n------------------------------------";
-                cout<<"\n\nNombre del Trabajador: "<<nombre[i];
-                cout<<"\n\nCedula: "<<cedula[i];
-                cout<<"\n\n------------------------------------";
-            }       
-        }*/
-
-			break;
 			switch (opcion)
 			{
 			case 1:
@@ -186,6 +171,7 @@ void Menu::modificarInformacion()
 				cout << "Opcion Invalida" << endl;
 				break;
 			}
+			libreta.modificarInfoDeContacto(nombre, apellido, direccion);
 		}
 		system("cls");
 	} while (opcion != 5);
@@ -216,9 +202,12 @@ void Menu::eliminarContactos()
 	libreta.listaCompletaDeContactos();
 	do
 	{
-		cout << "Elija el usuario que desea eliminar" << endl;
-		cin >> contacto;
-		libreta.eliminarContacto(nombre,apellido);
+		cout << "digite el nombre" << endl;
+		cin >> nombre;
+		cout << "digite el apellido" << endl;
+		cin >> apellido;
+
+		libreta.eliminarContacto(nombre, apellido);
 
 	} while (!((contacto >= 1) && (contacto <= 10)));
 	system("Pause");
@@ -240,13 +229,11 @@ void Menu::buscarContactos()
 	switch (opcion)
 	{
 	case 1:
-		libreta.listaCompletaDeContactos();
 		cout << "introduzca la pabra clave del contacto qe deseas buscar" << endl;
 		cin >> busqueda;
 
-		libreta.busquedaPorPalabrasClave(busqueda)   ;
+		libreta.busquedaPorPalabrasClave(busqueda);
 
-		
 		system("pause");
 		break;
 	default:
