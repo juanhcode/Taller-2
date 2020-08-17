@@ -13,6 +13,7 @@ E-mail:			: juan.manuel.hoyos@correounivalle.edu.co
     				: vargas.steven@correounivalle.edu.co
                     : gallego.cesar@correounivalle.edu.co
                     : cifuentes.sebastian@correounivalle.edu.co
+                    : Emanuel.benjumea@correounivalle.edu.co
 */
 
 /*CRC
