@@ -75,35 +75,3 @@ vector<string> Contacto::darTelefonos(){
 vector<string> Contacto::darPalabrasClave(){
     return PalabrasClave;
 }
-
-/*string Contacto::estaUnTelefono(string numero){
-    
-}
-
-void Contacto::eliminarTelefono(string numero){
-
-}
-
-string Contacto::estaUnaPalabraClave(string palabra){
-
-}
-
-void Contacto::eliminarPalabraClave(string palabra){
-
-}
-
-int Contacto::darTamanoTelefonos(){
-
-}
-
-string Contacto::darUnTelefono(int id){
-
-}
-
-int Contacto::darTamanoPalabrasClave(){
-
-}
-
-string Contacto::darUnaPalabraClave(int id){
-
-}*/

@@ -27,14 +27,6 @@ void Libreta::eliminarContacto(std::string nombre, std::string apellido)
     }
 }
 
-/*bool Libreta::estaUnContacto(std::string nombre, std::string apellido)
-{
-}
-
-int Libreta::retornarIdDeContacto(std::string nombre, std::string apellido)
-{
-}*/
-
 int Libreta::modificarInfoDeContacto(string nombre, string apellido, string direccion, string e_mail, int i)
 {
 
@@ -89,9 +81,6 @@ int Libreta::busquedaPorPalabrasClave(std::string palabra)
         return aux;
     }
 }
-/*Contacto busquedaPorId(int id)
-{
-}*/
 
 void Libreta::listaCompletaDeContactos(int i)
 {

@@ -13,13 +13,14 @@ E-mail:				: juan.manuel.hoyos@correounivalle.edu.co
     				: vargas.steven@correounivalle.edu.co
                     : gallego.cesar@correounivalle.edu.co
                     : cifuentes.sebastian@correounivalle.edu.co
+                    : Emanuel.benjumea@correounivalle.edu.co
 */
 
 /*CRC
 Clase: Contacto.h
 Responsabilidad:
-Colaboracion: Libreta.h
-              
+    crear nombre,apellido,direccion entre otros en el contacto
+Colaboracion:         
 */
 
 #ifndef __CLASSCONTACTO
@@ -58,14 +59,5 @@ public:
     void agregarPalabraClave(string palabra);
     vector<string> darTelefonos();
     vector<string> darPalabrasClave();
-    //string estaUnTelefono(string numero);
-    //void eliminarTelefono(string numero);
-    //string estaUnaPalabraClave(string palabra);
-    //void eliminarPalabraClave(string palabra);
-    //int darTamanoTelefonos();
-    //string darUnTelefono(int id);
-    //int darTamanoPalabrasClave();
-    //string darUnaPalabraClave(int id);
-
 };
 #endif //__CLASSCONTACTO
