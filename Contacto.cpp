@@ -17,7 +17,6 @@ Contacto::Contacto(){
 Contacto::~Contacto(){
 
 }
-//Get
 string Contacto::darNombre(){
     return nombre;
 }
@@ -30,30 +29,13 @@ string Contacto::darDireccion(){
     return direccion;
 }
 
-bool Contacto::darBuscarPalabraClave(string palabraM){
-    for (int i = 0; i < PalabrasClave.size(); i++)
-    {
-        if (palabraM == PalabrasClave[i])
-        {
-            return true;
-        }
-        
-    }
-    return false;
-}
-
-
 string Contacto::darCorreoElectronico(){
     return correoElectronico;
 }
-//
 
 void Contacto::modificarNombre(string nombre){
     this->nombre = nombre;
 }
-
-
-
 void Contacto::modificarApellido(string apellido){
     this->apellido = apellido;
 }
@@ -64,6 +46,18 @@ void Contacto::modificarDireccion(string direccion){
 
 void Contacto::modificarCorreoElectronico(string email){
     this->correoElectronico = email;
+}
+
+bool Contacto::darBuscarPalabraClave(string palabraM){
+    for (int i = 0; i < PalabrasClave.size(); i++)
+    {
+        if (palabraM == PalabrasClave[i])
+        {
+            return true;
+        }
+        
+    }
+    return false;
 }
 
 void Contacto::agregarTelefono(string numero){
@@ -82,7 +76,7 @@ vector<string> Contacto::darPalabrasClave(){
     return PalabrasClave;
 }
 
-string Contacto::estaUnTelefono(string numero){
+/*string Contacto::estaUnTelefono(string numero){
     
 }
 
@@ -112,4 +106,4 @@ int Contacto::darTamanoPalabrasClave(){
 
 string Contacto::darUnaPalabraClave(int id){
 
-}
+}*/

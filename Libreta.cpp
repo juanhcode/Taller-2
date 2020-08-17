@@ -20,21 +20,20 @@ void Libreta::eliminarContacto(std::string nombre, std::string apellido)
 {
     for (int i = 0; i < agenda.size(); i++)
     {
-        if ((nombre == agenda[i].darNombre()) and (apellido == agenda[i].darApellido()))
-            ;
+        if ((nombre == agenda[i].darNombre()) and (apellido == agenda[i].darApellido()));
         {
             agenda.erase(agenda.begin() + (i + 1));
         }
     }
 }
 
-bool Libreta::estaUnContacto(std::string nombre, std::string apellido)
+/*bool Libreta::estaUnContacto(std::string nombre, std::string apellido)
 {
 }
 
 int Libreta::retornarIdDeContacto(std::string nombre, std::string apellido)
 {
-}
+}*/
 
 int Libreta::modificarInfoDeContacto(string nombre, string apellido, string direccion, string e_mail, int i)
 {
@@ -90,9 +89,9 @@ int Libreta::busquedaPorPalabrasClave(std::string palabra)
         return aux;
     }
 }
-Contacto busquedaPorId(int id)
+/*Contacto busquedaPorId(int id)
 {
-}
+}*/
 
 void Libreta::listaCompletaDeContactos(int i)
 {

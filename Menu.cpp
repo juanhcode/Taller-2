@@ -258,7 +258,3 @@ void Menu::buscarContactos()
 		break;
 	}
 }
-
-void Menu::verInformacion(){
-
-}
